@@ -1,10 +1,17 @@
-import { SaveOutlined } from '@mui/icons-material';
+import  SaveOutlined  from '@mui/icons-material/SaveOutlined';
 import { Button, Grid, TextField, Typography } from '@mui/material';
 import { ImageGallery } from '../components';
 
 export const NoteView = () => {
   return (
-    <Grid container direction='row' justifyContent='space-between' alignItems='center' sx={{ mb: 1 }}>
+    <Grid 
+        container 
+        direction='row' 
+        justifyContent='space-between' 
+        alignItems='center' 
+        x={{ mb: 1 }}
+        className='animate__animated animate__fadeIn animate__faster'
+        >
         <Grid item >
             <Typography fontSize={ 39 } fontWeight='light' >5 de Mayo, 2023</Typography>
         </Grid>
