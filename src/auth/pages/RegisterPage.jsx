@@ -53,14 +53,37 @@ export const RegisterPage = () => {
 }
 
   return (
-    <AuthLayout title="Crear Cuenta">
+    <>
+    <Grid container component="main" sx={{ height: '100vh' }}>
 
+      <Grid  
+            item
+            xs={false}
+            sm={4}
+            md={7}
+            sx={{
+              backgroundImage: "url(https://wallpapercrafter.com/desktop/208826-notebook-camera-pencil-and-journal-hd.jpg)",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+      />
+
+      <Grid item xs={12} sm={8} md={5} elevation={6} square>
+    <AuthLayout>
+    <Typography component="h1" variant="poster" align='center' sx={{ mt:1, color: '#2A2F4F',
+            fontSize: {
+                xs: "1.8rem",
+                sm: "2.2rem",},}}
+      >
+      Crear Cuenta
+      </Typography>
       <form onSubmit={ onSubmit } className='animate__animated animate__fadeIn animate__faster'>
         <Grid container>
           <Grid item xs={12} sx={{ mt: 2 }}>
             <TextField
               label="Nombre Completo"
-              type="nombre"
+              type="Nombre"
               placeholder="Tu Nombre"
               fullWidth
               name='displayName'
@@ -75,7 +98,7 @@ export const RegisterPage = () => {
         <Grid container>
           <Grid item xs={12} sx={{ mt: 2 }}>
             <TextField
-              label="email"
+              label="Email"
               type="email"
               placeholder="correo@outlook.us"
               fullWidth
@@ -90,7 +113,7 @@ export const RegisterPage = () => {
 
         <Grid item xs={12} sx={{ mt: 2 }}>
           <TextField
-            label="password"
+            label="Password"
             type="password"
             placeholder="Password"
             fullWidth
@@ -116,12 +139,15 @@ export const RegisterPage = () => {
 
           <Grid container direction="row" justifyContent="end" sx={{ mt: 1 }}>
             <Typography sx={{ mr: 1 }}>¿Ya tienes cuenta?</Typography>
-            <Link component={RouterLink} color="inherit" to="/auth/login" onClick={ checkError } > 
+            <Link component={RouterLink} color="inherit" underline="hover"  to="/auth/login" onClick={ checkError } > 
             Iniciar sesión
             </Link>
           </Grid>
         </Grid>
       </form>
     </AuthLayout>
+    </Grid>
+  </Grid>
+</>    
   );
-};
+}

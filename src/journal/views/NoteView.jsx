@@ -2,6 +2,9 @@ import  SaveOutlined  from '@mui/icons-material/SaveOutlined';
 import { Button, Grid, TextField, Typography } from '@mui/material';
 import { ImageGallery } from '../components';
 
+const today = new Date();
+const now = today.toDateString('es-AR');
+
 export const NoteView = () => {
   return (
     <Grid 
@@ -13,10 +16,15 @@ export const NoteView = () => {
         className='animate__animated animate__fadeIn animate__faster'
         >
         <Grid item >
-            <Typography fontSize={ 39 } fontWeight='light' >5 de Mayo, 2023</Typography>
+            <Typography  
+            sx={{ fontSize: { xs: "1.8rem", sm: "2.2rem",},}} 
+                      variant="overline" 
+                      fontWeight='light'
+            > {now}
+            </Typography>
         </Grid>
         <Grid item>
-            <Button color='primary' sx={{ padding: 2 }}>
+            <Button color='primary'  sx={{ padding: 2 }}>
                 <SaveOutlined sx={{ fontSize: 30, mr: 1 }} />
                 Guardar
             </Button>
@@ -25,7 +33,7 @@ export const NoteView = () => {
         <Grid container>
             <TextField 
                 type='text'
-                variant='filled'
+                variant='outlined'
                 fullWidth
                 placeholder='Ingrese un título'
                 label='Título'
@@ -34,7 +42,7 @@ export const NoteView = () => {
 
             <TextField 
                 type='text'
-                variant='filled'
+                variant='outlined'
                 fullWidth
                 multiline
                 placeholder='¿Qué sucedió en el día de hoy?'

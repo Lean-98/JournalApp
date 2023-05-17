@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
-import { Box, Divider, Drawer, Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography } from '@mui/material'
-import  TurnedInNot  from '@mui/icons-material/TurnedInNot';
+import { Avatar, Box, Divider, Drawer, Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography } from '@mui/material'
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+
 
 export const SideBar = ({ drawerWidth = 280 }) => {
 
@@ -20,7 +21,8 @@ export const SideBar = ({ drawerWidth = 280 }) => {
             }}
         >
             <Toolbar>
-                <Typography variant='h6' noWrap component='div'>
+                <Avatar sx={{ bgcolor: 'secondary.main',m: 1 }}>{ displayName.charAt(0)}</Avatar>
+                <Typography variant='h6' noWrap component='div' color='primary.main'>
                     { displayName }
                 </Typography>
             </Toolbar>
@@ -28,11 +30,11 @@ export const SideBar = ({ drawerWidth = 280 }) => {
 
             <List>
                 {
-                    ['Enero','Febrero','Marzo','Abril'].map( text => (
+                    ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre'].map( text => (
                         <ListItem key={ text } disablePadding>
                             <ListItemButton>
                                 <ListItemIcon>
-                                    <TurnedInNot />
+                                    <CalendarMonthIcon />
                                 </ListItemIcon>
                                 <Grid container>
                                     <ListItemText primary={ text } />
