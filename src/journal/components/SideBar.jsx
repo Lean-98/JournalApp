@@ -1,11 +1,12 @@
 import { useSelector } from 'react-redux';
 import { Avatar, Box, Divider, Drawer, Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography } from '@mui/material'
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import { SideBarItem } from './';
 
 
 export const SideBar = ({ drawerWidth = 280 }) => {
 
     const { displayName } = useSelector( state => state.auth );
+    const { notes } = useSelector( state => state.journal );
 
   return (
     <Box
@@ -30,18 +31,8 @@ export const SideBar = ({ drawerWidth = 280 }) => {
 
             <List>
                 {
-                    ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre'].map( text => (
-                        <ListItem key={ text } disablePadding>
-                            <ListItemButton>
-                                <ListItemIcon>
-                                    <CalendarMonthIcon />
-                                </ListItemIcon>
-                                <Grid container>
-                                    <ListItemText primary={ text } />
-                                    <ListItemText secondary={ 'Exercitation cillum irure elit consectetur.' } />
-                                </Grid>
-                            </ListItemButton>
-                        </ListItem>
+                    notes.map( note => (
+                        <SideBarItem key={ note.id }  { ...note }/>
                     ))
                 }
             </List>
