@@ -26,6 +26,7 @@ dist-ssr
 # local env files
 .env.local
 .env.production
+.env.test
 
 # firebase keys
 # src/firebase/config.js

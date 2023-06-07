@@ -62,7 +62,7 @@ export const RegisterPage = () => {
             sm={4}
             md={7}
             sx={{
-              backgroundImage: "url(https://wallpapercrafter.com/desktop/208826-notebook-camera-pencil-and-journal-hd.jpg)",
+              backgroundImage: "url(https://res.cloudinary.com/ddiulrst8/image/upload/v1686159793/fowwzfusffebmzr3jcn0.webp)",
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
               backgroundPosition: "center",

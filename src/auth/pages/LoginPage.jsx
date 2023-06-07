@@ -63,7 +63,7 @@ return (
               sm={4}
               md={7}
               sx={{
-                backgroundImage: "url(https://wallpapercrafter.com/desktop1/551112-lifestyle-simple-plain-basic-starbuck-clock-wallpaper.jpg)",
+                backgroundImage: "url(https://res.cloudinary.com/ddiulrst8/image/upload/v1686159790/aafz3ihu7ujx6wxzveix.webp)",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
@@ -91,7 +91,7 @@ return (
                   </Typography>
               </Stack>  
 
-                <form onSubmit={ onSubmit } className='animate__animated animate__fadeIn animate__faster'>
+                <form aria-label='submit-form' onSubmit={ onSubmit } className='animate__animated animate__fadeIn animate__faster'>
                   <Grid container >
                     <Grid item xs={ 12 } sx={{ mt: 2 }}>
                       <TextField 
@@ -112,6 +112,9 @@ return (
                       placeholder='Password'
                       fullWidth
                       name='password'
+                      inputProps={{
+                        'data-testid': 'password'
+                      }}
                       value={ password }
                       onChange={ onInputChange }
                       />
@@ -131,7 +134,7 @@ return (
                         </Grid>
 
                         <Grid item  xs={ 12 } sm={ 6 }>
-                          <Button disabled={ isAuthenticating } onClick={ onGoogleSignIn } variant="contained"  fullWidth>
+                          <Button disabled={ isAuthenticating } onClick={ onGoogleSignIn } aria-label='google-btn' variant="contained"  fullWidth>
                             <Google />
                             <Typography sx={{ ml:1, fontSize: 14 }}>Google</Typography>
                           </Button>
